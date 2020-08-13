@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2020/2/3
-  Time: 0:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
@@ -42,7 +35,7 @@
                 <img src="http://fp1.fghrsh.net/2020/02/11/9c9aab8ab16d0754e3d6121b661e5016.png"/>
             </a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('在线接口调试','http://127.0.0.1:8080/Books/swagger/index.html')">在线接口</a></dd>
+               <%-- <dd><a onclick="x_admin_show('在线接口调试','http://127.0.0.1:8080/Books/swagger/index.html')">在线接口</a></dd>--%>
                 <dd><a href="${pageContext.request.contextPath}/loginOut">退出</a></dd>
             </dl>
         </li>
@@ -138,14 +131,14 @@
                             </a>
                         </li >
                     </ul>
-                    <ul class="sub-menu">
+                    <%--<ul class="sub-menu">
                         <li>
                             <a _href="${pageContext.request.contextPath}/heat_parse">
                                 <i class="iconfont">&#xe70b;</i>
                                 <cite>教材热度分析</cite>
                             </a>
                         </li >
-                    </ul>
+                    </ul>--%>
                 </li>
             </c:if>
             <c:if test="${sessionScope.user.getIdentification()=='教师'}">
@@ -206,7 +199,7 @@
                     </ul>
                 </li>
             </c:if>
-            <li>
+           <%-- <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe6b8;</i>
                     <cite>系统帮助</cite>
@@ -220,7 +213,7 @@
                         </a>
                     </li >
                 </ul>
-            </li>
+            </li>--%>
         </ul>
     </div>
 </div>
@@ -245,7 +238,7 @@
 <!-- 底部开始 -->
 <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
 <script>
-    L2Dwidget.init({
+   /* L2Dwidget.init({
         "model": {
             //jsonpath控制显示那个小萝莉模型，下面这个就是我觉得最可爱的小萝莉模型，替换时后面名字也要替换掉
             jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
@@ -266,7 +259,7 @@
             "opacityDefault": 0.7,
             "opacityOnHover": 0.2
         }
-    });
+    });*/
 </script>
 <div class="footer">
     <div class="copyright">教材管理系统</div>
