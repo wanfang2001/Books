@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 @Transactional
 public interface BookService {
-    List<Supplier> findAllBookByPages(int start, int pageSize);
-    List<Supplier> findAllBook();
+    List<Book> findAllBookByPages(int start, int pageSize);
+    List<Book> findAllBook();
     int addBook(Map map);
     Book findBookById(String id);
     int updateBookById(Map map);
@@ -17,4 +17,5 @@ public interface BookService {
     List<String>findAllBookKind();
     List<Supplier> findAllBookByBookName(String book_name);
     List<String>findBookNameByQsName(String book_name);
+
 }

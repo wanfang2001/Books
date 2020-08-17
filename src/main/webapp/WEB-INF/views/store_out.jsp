@@ -34,12 +34,12 @@
     <button type="button"   class="layui-btn layui-btn-sm " onclick="receive_book()">
         领书
     </button>
-    <button type="button"   class="layui-btn layui-btn-sm " >
+    <%--<button type="button"   class="layui-btn layui-btn-sm " >
         修改
     </button>
     <button type="button"   class="layui-btn layui-btn-sm " >
         删除
-    </button>
+    </button>--%>
 </div>
 </body>
 <script>

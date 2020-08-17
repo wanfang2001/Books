@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2020/2/3
-  Time: 1:06
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -41,11 +34,14 @@
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <xblock>
+    <%--<xblock>
         <button class="layui-btn layui-btn-danger" onclick="exportData();"><i class="iconfont">&#xe71d;</i>导出excel</button>
         <button class="layui-btn" id="importData"><i class="iconfont">&#xe714;</i>导入excel</button>
-    </xblock>
-    <table id="supplierInfo" lay-filter="supplierInfo"></table>
+    </xblock>--%>
+    <table id="supplierInfo" lay-filter="supplierInfo">
+
+
+    </table>
 </div>
 </body>
 <script>
@@ -73,7 +69,7 @@
             ,cols: [
                 [
                     {type: 'checkbox'}
-                    ,{field:'id',title:'供货商代码', sort: true}
+                    ,{field:'id',title:'供货商编号', sort: true}
                     ,{field:'qs_name', title:'供货商名'}
                     ,{field:'qs_location', title:'供货商地址'}
                     ,{field:'qs_phone', title:'供货商联系方式'}
@@ -115,7 +111,7 @@
         });
         layer.open({
             type: 2,
-            title: '领取教材',
+            title: '供货商',
             skin: 'layui-layer-molv',
             shadeClose: false,
             shade: 0.8,

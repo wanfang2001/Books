@@ -25,9 +25,9 @@
     <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" onclick="receive_book()">
         领书
     </button>
-    <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" >
+   <%-- <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" >
         修改
-    </button>
+    </button>--%>
 </div>
 <body class="layui-anim layui-anim-up">
 <div class="x-nav">

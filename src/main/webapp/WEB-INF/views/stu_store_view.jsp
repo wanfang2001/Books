@@ -41,9 +41,9 @@
     <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" onclick="back_book()">
         退书
     </button>
-    <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" >
+   <%-- <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" >
         修改
-    </button>
+    </button>--%>
 </div>
 
 </body>

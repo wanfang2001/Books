@@ -11,16 +11,17 @@ import java.util.List;
 import java.util.Map;
 @Service
 public class BookServiceImpl implements BookService {
+
     @Autowired
     BookMapper bookMapper;
 
     @Override
-    public List<Supplier> findAllBookByPages(int start, int pageSize) {
+    public List<Book> findAllBookByPages(int start, int pageSize) {
         return bookMapper.findAllBookByPages(start,pageSize);
     }
 
     @Override
-    public List<Supplier> findAllBook() {
+    public List<Book> findAllBook() {
         return bookMapper.findAllBook();
     }
 

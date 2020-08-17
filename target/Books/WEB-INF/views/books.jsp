@@ -1,4 +1,3 @@
-<%--教材录入主界面--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -25,7 +24,7 @@
     <a title="修改信息 "   onclick="updateBookById()" href="javascript:;">
         <i class="layui-icon">&#xe642;</i>
     </a>
-    <a title="删除"  onclick="deleteBookById()" href="javascript:;" lay-event="edit">
+    <a title="删除信息"  onclick="deleteBookById()" href="javascript:;" lay-event="edit">
         <i class="layui-icon">&#xe640;</i>
     </a>
 </script>
@@ -44,10 +43,10 @@
     </div>
 </div>
 <div class="x-body">
-    <xblock>
+   <%-- <xblock>
         <button class="layui-btn layui-btn-danger" onclick="exportData();"><i class="iconfont">&#xe71d;</i>导出excel</button>
         <button class="layui-btn" id="importData"><i class="iconfont">&#xe714;</i>导入excel</button>
-    </xblock>
+    </xblock>--%>
     <table id="bookInfo" lay-filter="bookInfo"></table>
 </div>
 </body>
@@ -77,10 +76,10 @@
                 [
                     {type: 'checkbox'}
                     ,{field:'id',title:'教材编号', sort: true}
-                    ,{field:'book_name', title:'教材名称'}
-                    ,{field:'book_kind', title:'教材分类'}
-                    ,{field:'book_price', title:'教材单价'}
-                    ,{field:'qs_name', title:'供货商名称'}
+                    ,{field:'book_name',title:'教材名称',sort: true}
+                    ,{field:'book_kind',title:'教材分类',sort: true}
+                    ,{field:'book_price',title:'教材单价'}
+                    ,{field:'qs_name',title:'供货商名称'}
                     ,{field:'operation',title:'操作',toolbar: '#barDemo'}
                 ]
             ]
@@ -97,7 +96,7 @@
                 if(result.message=="success"){
                     location.reload(true);
                 }else {
-                   layer.msg('excel导入失败！');
+                    layer.msg('excel导入失败！');
                 }
             },
             error:function (result) {
@@ -140,7 +139,7 @@
         });
         layer.open({
             type: 2,
-            title: '领取教材',
+            title: '修改信息',
             skin: 'layui-layer-molv',
             shadeClose: false,
             shade: 0.8,

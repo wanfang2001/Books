@@ -44,4 +44,9 @@ public class SupplierServiceImpl implements SupplierService {
     public List<String> findAllQsName() {
         return suppliersMapper.findAllQsName();
     }
+
+    @Override
+    public Supplier selectById(String id) {
+        return suppliersMapper.selectById(id);
+    }
 }

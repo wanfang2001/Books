@@ -27,7 +27,7 @@
         select #{id},#{store_time},#{store_info},#{book_count},#{book_init},b.id
         from book b
         where b.book_name=#{book_name} and b.qs_id =
-			(select id
+		(select id
 			    from qs
 				where qs.qs_name = #{qs_name}
 			)
@@ -70,7 +70,7 @@
         select sto_in.*
                 from store_in sto_in
                         where sto_in.book_id
-                in
+                 in
                 (
                 select b.id
                 from book b

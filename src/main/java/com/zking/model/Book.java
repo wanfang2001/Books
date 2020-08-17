@@ -3,16 +3,17 @@ package com.zking.model;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 
 public class Book {//书本
-    @Excel(name = "教材编号", orderNum = "0")
+//    @Excel(name = "教材编号", orderNum = "0")
     private String id;
-    @Excel(name = "教材名称")
+//    @Excel(name = "教材名称")
     private String book_name;
-    @Excel(name = "教材分类")
+//    @Excel(name = "教材分类")
     private String book_kind;
-    @Excel(name = "教材单价")
+//    @Excel(name = "教材单价")
     private Double book_price;
-    @Excel(name = "供货商名称")
+//    @Excel(name = "供货商名称")
     private String qs_name;
+
 
     public Book() {
     }

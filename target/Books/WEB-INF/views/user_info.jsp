@@ -1,4 +1,10 @@
-<%--用户信息搜索--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2020/2/3
+  Time: 1:06
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -21,13 +27,13 @@
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<div id="barDemo" style="display: none;">
+<div id="barDemo" style="display: none; width: 100%">
     <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" onclick="deluser()">
         删除
     </button>
-    <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" >
+   <%-- <button type="button"   class="layui-btn layui-btn-sm layui-btn-danger" onclick="">
         修改
-    </button>
+    </button>--%>
 </div>
 <body class="layui-anim layui-anim-up">
 <div class="x-nav">
@@ -43,35 +49,32 @@
 <div class="x-body">
     <form id="userSearch" class="layui-input-inline" method="post" action="" style="margin-top: 20px;">
         <div class="layui-row">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">选择学院：</label>
-                    <div class="layui-input-inline layui-form">
-                        <select lay-filter="college-data" id="college-data">
-                        </select>
-                    </div>
-                    <label class="layui-form-label">选择专业：</label>
-                    <div class="layui-input-inline layui-form">
-                        <select lay-filter="profession-data" id="profession-data">
-                        </select>
-                    </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择学院：</label>
+                <div class="layui-input-inline layui-form">
+                    <select lay-filter="college-data" id="college-data">
+                    </select>
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">选择年级：</label>
-                    <div class="layui-input-inline layui-form">
-                        <select lay-filter="grade-data" id="grade-data">
-                        </select>
-                    </div>
-                    <label class="layui-form-label">选择班级：</label>
-                    <div class="layui-input-inline layui-form">
-                        <select lay-filter="cclass-data" id="cclass-data">
-                        </select>
-                    </div>
+                <label class="layui-form-label">选择专业：</label>
+                <div class="layui-input-inline layui-form">
+                    <select lay-filter="profession-data" id="profession-data">
+                    </select>
                 </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择年级：</label>
+                <div class="layui-input-inline layui-form">
+                    <select lay-filter="grade-data" id="grade-data">
+                    </select>
+                </div>
+                <label class="layui-form-label">选择班级：</label>
+                <div class="layui-input-inline layui-form">
+                    <select lay-filter="cclass-data" id="cclass-data">
+                    </select>
+                </div>
+            </div>
         </div>
     </form>
-   <%-- <div class="layui-input-inline" >
-        <button class="layui-btn" data-type="reload">条件搜索</button>
-    </div>--%>
 
     <div class="layui-input-inline" >
         <button class="layui-btn" data-type="reload">条件搜索</button>
@@ -134,7 +137,7 @@
                 ]
             ]
         });
-    var $ = layui.$, active = {
+        var $ = layui.$, active = {
             reload: function(){
                 //执行重载
                 table.reload('userInfo', {
@@ -234,7 +237,7 @@
                 $.each(data.data, function (index, item) {
                     $('#college-data').append(new Option(item.col_name, item.col_name));// 下拉菜单里添加元素
                 });
-               layui.form.render("select");
+                layui.form.render("select");
             }
         });
         setTimeout(function(){

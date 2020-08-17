@@ -56,13 +56,13 @@
 						<input type="text" name="email"  autocomplete="off" class="layui-input" placeholder="输入邮箱">
 					</div>
 				</div>
-				<div class="layui-form-item">
+				<%--<div class="layui-form-item">
 					<label class="layui-form-label">修改头像</label>
 					<div class="layui-input-block">
 						<button type="button" class="layui-btn layui-btn-primary" id="photo"><i class="layui-icon">&#xe67c;</i>选择文件</button>
 						<img   id="display"  style="width:30px;height:30px;padding-left: 200px;">
 					</div>
-				</div>
+				</div>--%>
 				<div class="layui-form-item">
 					<div class="layui-input-block">
 						<button class="layui-btn" lay-submit="" lay-filter="ch_perInfo" type="button">立即提交</button>

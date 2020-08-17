@@ -45,7 +45,7 @@
 <script type="text/javascript">
     function showLoad() {
 
-        return layer.msg('我正在拼命执行中啊！！！！...', {icon: 16,shade: [0.5, '#f5f5f5'],scrollbar: false,offset: 'auto', time:1000});
+        return layer.msg('我正在拼命执行中！！！！...', {icon: 16,shade: [0.5, '#f5f5f5'],scrollbar: false,offset: 'auto', time:1000});
 
     }
 

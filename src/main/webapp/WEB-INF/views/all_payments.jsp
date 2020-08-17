@@ -34,12 +34,12 @@
     <table id="stu_store_view" lay-filter="stu_store_view"></table>
 </div>
 <div id="OpRowBar" style="display: none;">
-    <button type="button"   class="layui-btn layui-btn-sm " >
-        修改
-    </button>
-    <button type="button"   class="layui-btn layui-btn-sm " >
-        删除
-    </button>
+<%--    <button type="button"   class="layui-btn layui-btn-sm " >--%>
+<%--        修改--%>
+<%--    </button>--%>
+<%--    <button type="button"   class="layui-btn layui-btn-sm " >--%>
+<%--        删除--%>
+<%--    </button>--%>
 </div>
 </body>
 <script>
@@ -72,7 +72,7 @@
                     ,{field:'book_price', title:'教材单价',sort:true}
                     ,{field:'payment', title:'共计价格'}
                     ,{field:'pay_time', title:'付款时间'}
-                    ,{field:'operation',title:'操作',toolbar: '#OpRowBar'}
+                   /* ,{field:'operation',title:'操作',toolbar: '#OpRowBar'}*/
                 ]
             ]
         });

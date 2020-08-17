@@ -33,5 +33,8 @@
        select DISTINCT qs.qs_name
        from qs
     </select>
+    <select id="selectById" resultType="com.zking.model.Supplier">
+        select * from qs where id=#{id}
+    </select>
 
 </mapper>

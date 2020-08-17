@@ -53,14 +53,14 @@
                     <cite>账户设置</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
-                <ul class="sub-menu">
+               <%-- <ul class="sub-menu">
                     <li>
                         <a _href="${pageContext.request.contextPath}/personInfo">
                             <i class="iconfont">&#xe70b;</i>
                             <cite>账户信息</cite>
                         </a>
                     </li >
-                </ul>
+                </ul>--%>
                 <ul class="sub-menu">
                     <li>
                         <a _href="${pageContext.request.contextPath}/changepwd">
@@ -261,8 +261,8 @@
         }
     });*/
 </script>
-<div class="footer">
+<%--<div class="footer">
     <div class="copyright">教材管理系统</div>
-</div>
+</div>--%>
 </body>
 </html>

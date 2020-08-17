@@ -47,13 +47,13 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">手机号码</label>
                     <div class="layui-input-block">
-                        <input type="text" name="phone" id="phone" autocomplete="off" class="layui-input" placeholder="输入手机号码" disabled="disabled">
+                        <input type="text" name="phone" id="phone" autocomplete="off" class="layui-input" disabled="disabled">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">email</label>
                     <div class="layui-input-block">
-                        <input type="text" name="email" id="email" autocomplete="off" class="layui-input" placeholder="输入邮箱" disabled="disabled">
+                        <input type="text" name="email" id="email" autocomplete="off" class="layui-input"  disabled="disabled">
                     </div>
                 </div>
             </form>

@@ -37,8 +37,6 @@ public class BookController {
         Map<String, Object> result = new HashMap<String, Object>();
         List<Book> book = POIUtil.importExcel(file,Book.class);
         System.out.println(book);
-        //List <Supplier> supplier2 = supplierService.findAllSupplier();
-        //supplier1.addAll(supplier2);
         for(int i=0;i<book.size();i++){
             map.put("id",book.get(i).getId());
             map.put("book_name",book.get(i).getBook_name());
@@ -65,8 +63,11 @@ public class BookController {
     public String getAllBookByPage(@RequestParam("limit") String limit, @RequestParam("page") String page){
         int start = (Integer.parseInt(page) - 1)*Integer.parseInt(limit);
         int pageSize = Integer.parseInt(limit);
-        List <Supplier> books = bookService.findAllBookByPages(start,pageSize);
-        List <Supplier> allData = bookService.findAllBook();
+        List <Book> books = bookService.findAllBookByPages(start,pageSize);
+        for (Book book : books) {
+            System.out.println(book);
+        }
+        List <Book> allData = bookService.findAllBook();
         Layui l = Layui.data(allData.size(), books);
         return JSON.toJSONString(l);
     }
@@ -74,7 +75,7 @@ public class BookController {
     @ResponseBody
     @RequestMapping(value = "/book/getAllBook",produces="application/json;charset=UTF-8")
     public String getAllBook(){
-        List <Supplier> allData = bookService.findAllBook();
+        List <Book> allData = bookService.findAllBook();
         Layui l = Layui.data(allData.size(), allData);
         return JSON.toJSONString(l);
     }
@@ -89,7 +90,7 @@ public class BookController {
 
     @RequestMapping("/book/exportData")
     public String exportData(HttpServletResponse response){
-        List <Supplier> books = bookService.findAllBook();
+        List <Book> books = bookService.findAllBook();
         POIUtil.exportExcel(books,Book.class,"书籍基本信息","",response);
         return  NormalExcelConstants.EASYPOI_EXCEL_VIEW;//需要配置新的视图解析器并设置优先级和扫描
     }
@@ -128,4 +129,7 @@ public class BookController {
         List<String> book_names = bookService.findBookNameByQsName(qs_name);
         return JSON.toJSONString(book_names);
     }
+
+
+
 }

@@ -8,6 +8,7 @@ import com.zking.util.Layui;
 import com.zking.util.POIUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -87,12 +88,9 @@ public class SupplierController {
 
     @ResponseBody
     @RequestMapping(value = "/updateQsById")
-    public String updateQsById(@RequestBody Map map){
+    public int updateQsById(@RequestBody Map map){
         int n = supplierService.updateQsById(map);
-        if(n>0){
-            return "success";
-        }
-        return "failure";
+        return n;
     }
 
     @ResponseBody
@@ -110,6 +108,14 @@ public class SupplierController {
     public String findAllQsName(){
         List<String> allQsName = supplierService.findAllQsName();
         return  JSON.toJSONString(allQsName);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/findById",produces="application/json;charset=UTF-8")
+    public Supplier selectByID(Model model,String id){
+        Supplier s = supplierService.selectById(id);
+        return s;
     }
 
 }

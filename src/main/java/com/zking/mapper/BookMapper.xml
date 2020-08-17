@@ -2,8 +2,28 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zking.mapper.BookMapper">
+    
+    <resultMap id="BaseResultMap" type="com.zking.model.Book">
+        <constructor>
+            <idArg column="id"  jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="book_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="book_kind" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="book_price" jdbcType="DECIMAL" javaType="java.lang.Double"/>
+            <arg column="qs_id" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
 
-    <select id="findAllBookByPages" resultType="com.zking.model.Supplier">
+    <resultMap id="row" type="com.zking.model.Book">
+            <id column="id" property="id"  jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <result column="book_name" property="book_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <result column="book_kind" property="book_kind" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <result column="book_price" property="book_price" jdbcType="DECIMAL" javaType="java.lang.Double"/>
+            <result column="qs_id" property="qs_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+    </resultMap>
+
+
+
+    <select id="findAllBookByPages" resultMap="row">
         select b.id,b.book_name,b.book_kind,b.book_price,qs.qs_name
         from book b
         inner join qs
@@ -11,19 +31,23 @@
         limit #{arg0},#{arg1}
     </select>
 
-    <select id="findAllBook" resultType="com.zking.model.Supplier">
+    <select id="findAllBook" resultType="com.zking.model.Book">
         select b.id,b.book_name,b.book_kind,b.book_price,qs.qs_name
         from book b
         inner join qs
         on b.qs_id = qs.id
     </select>
 
-    <select id="findAllBookByBookName" resultType="com.zking.model.Supplier">
+
+    <select id="findAllBookByBookName" resultMap="BaseResultMap">
         select b.id,b.book_name,b.book_kind,b.book_price,qs.qs_name
         from book b
         inner join qs
         on b.qs_id = qs.id
-        where book_name like CONCAT(CONCAT('%',#{arg0}),'%')
+        where 1=1
+        <if test="book_name != null">
+            and book_name like CONCAT(CONCAT('%',#{book_name},'%'))
+        </if>
     </select>
 
     <select id="findAllBookKind" resultType="java.lang.String">

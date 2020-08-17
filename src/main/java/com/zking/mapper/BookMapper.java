@@ -9,8 +9,8 @@ import java.util.Map;
 
 @Mapper
 public interface BookMapper {
-    List<Supplier> findAllBookByPages(int start, int pageSize);
-    List<Supplier> findAllBook();
+    List<Book> findAllBookByPages(int start, int pageSize);
+    List<Book> findAllBook();
     int addBook(Map map);
     Book findBookById(String id);
     int updateBookById(Map map);
@@ -18,4 +18,7 @@ public interface BookMapper {
     List<String>findAllBookKind();
     List<Supplier> findAllBookByBookName(String book_name);
     List<String>findBookNameByQsName(String book_name);
+
+
+
 }

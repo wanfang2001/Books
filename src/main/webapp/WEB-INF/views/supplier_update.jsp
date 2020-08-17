@@ -1,4 +1,4 @@
-<%--供货商录入--%>
+<%--供货商录入修改--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@
         <div class="layui-inline">
             <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i> 供应商名称</label>
             <div class="layui-input-block">
-                <input type="text" name="qs_name" placeholder="请输入供应商名称" autocomplete="off" class="layui-input">
+                <input type="text"  id="qs_name" name="qs_name" placeholder="请输入供应商名称" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-inline">
@@ -38,7 +38,7 @@
         <div class="layui-inline">
             <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i> 供货商联系方式</label>
             <div class="layui-input-block">
-                <input type="text" name="qs_phone" placeholder="请输入供货商联系方式" autocomplete="off" class="layui-input">
+                <input type="text" id="qs_phone" name="qs_phone" placeholder="请输入供货商联系方式" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item lau-sign-other" style="margin-top: 20px;text-align:center">
@@ -47,7 +47,7 @@
     </form>
 </body>
 <script>
-    var qs_id = getQueryString("qs_id")
+    var qs_id = getQueryString("qs_id");
     console.log(qs_id)
     layui.use([ "element", "laypage", "layer", "upload","table"], function() {
         var form = layui.form
@@ -89,7 +89,7 @@
 
     $(function () {
         $.ajax({
-            url:'${pageContext.request.contextPath}/book/getAllBook',
+            url:'${pageContext.request.contextPath}/findById',
             dataType: 'json',
             type: 'post',
             success: function (data) {

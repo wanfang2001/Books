@@ -13,4 +13,6 @@ public interface SupplierService {
     int deleteQsById(String id);
     int updateQsById(Map map);
     List<String>findAllQsName();
+
+    Supplier selectById(String id);
 }

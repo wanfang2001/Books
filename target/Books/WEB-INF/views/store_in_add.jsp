@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>欢迎页面</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -42,12 +42,12 @@
             </div>
         </div>
         <div class="layui-inline">
-            <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i> 教材选择</label>
-            <div class="layui-input-block">
-                <select lay-filter="book_name" id="book_name" class="layui-input">
-                </select>
-            </div>
+        <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i> 教材选择</label>
+        <div class="layui-input-block">
+            <select lay-filter="book_name" id="book_name" class="layui-input">
+            </select>
         </div>
+    </div>
         <div class="layui-form-item lau-sign-other" style="margin-top: 20px;text-align:center">
             <button type="button" class="layui-btn layui-btn-normal" lay-submit="" lay-filter="addStoreIn" style="margin-right: 100px">提交</button>
         </div>
@@ -60,7 +60,7 @@
         var qs_name = ""
         form.on('select(book_name)', function(data){
             book_name = data.value;
-            console.log("bk_name"+book_name)
+            console.log(book_name)
         });
         form.on('select(qs_name)', function(data){
             qs_name = data.value;
@@ -69,13 +69,15 @@
                 console.log(data2)
                 var optionstring = "";
                 $.each(data2, function(i,item){
-                    console.log("bs_name:"+item)
+                    console.log("qs_name:"+item)
                     optionstring += "<option value=\"" + item + "\" >" + item + "</option>";
+                    $("#book_name").html('<option value="book_name"></option>' + optionstring);
+                    form.render('select'); //这个很重要
                 });
-                $("#book_name").html('<option value=""></option>' + optionstring);
-                form.render('select'); //这个很重要
             });
+
         });
+
         //监听提交
         form.on('submit(addStoreIn)', function(result) {
             console.log("result.field:"+typeof (result.field))//object
@@ -119,7 +121,7 @@
             type: 'post',
             success: function (data) {
                 $.each(data, function (index, item) {
-                    //$('#book_name').append(new Option(item.book_name, item.book_name));// 下拉菜单里添加元素
+                   // $('#book_name').append(new Option(item, item));// 下拉菜单里添加元素
                     $('#qs_name').append(new Option(item, item));
                 });
                 layui.form.render("select");

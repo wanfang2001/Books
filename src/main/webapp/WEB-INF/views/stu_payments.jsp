@@ -34,12 +34,12 @@
     <table id="stu_store_view" lay-filter="stu_store_view"></table>
 </div>
 <div id="OpRowBar" style="display: none;">
-    <button type="button"   class="layui-btn layui-btn-sm " >
+   <%-- <button type="button"   class="layui-btn layui-btn-sm " >
         修改
-    </button>
-    <button type="button"   class="layui-btn layui-btn-sm " >
+    </button>--%>
+   <%-- <button type="button"   class="layui-btn layui-btn-sm " >
         删除
-    </button>
+    </button>--%>
 </div>
 </body>
 <script>
